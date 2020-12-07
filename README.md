@@ -1,4 +1,4 @@
-# Walmart-Bot
+# Walmart PS5 Bot
 Script is designed to quickly purchase a PS5 from the Walmart website.
 This program navigates to the walmart website through Google Chrome where it:
   1. Adds the PS55 to your cart

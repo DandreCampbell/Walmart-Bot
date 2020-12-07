@@ -16,7 +16,7 @@ class PS5Bot:
         self.creditCardMonth = creditCardMonth
         self.creditCardYear = creditCardYear
         self.creditCardCCV = creditCardCCV
-        self.driver = webdriver.Chrome("C:\Program Files (x86)\chromedriver.exe")
+        self.driver = webdriver.Firefox("C:\Program Files (x86)\chromedriver.exe")
         self.driver.get('https://www.walmart.com/ip/PlayStation-5-Console/363472942')
 
     def add_ps5_to_cart_and_checkout(self):

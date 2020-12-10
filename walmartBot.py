@@ -1,15 +1,17 @@
 from selenium import webdriver
+from selenium.webdriver.support.ui import Select
 import time
 
 class PS5Bot:
 
-    def __init__(self, firstName, lastName, email, streetAddress, city, zipCode, phone, creditCardNumber,
+    def __init__(self, firstName, lastName, email, streetAddress, city, state, zipCode, phone, creditCardNumber,
                 creditCardMonth, creditCardYear, creditCardCCV, PATH):
         self.firstName = firstName
         self.lastName = lastName
         self.email = email
         self.streetAddress = streetAddress
         self.city = city
+        self.state = state
         self.zipCode = zipCode
         self.phone = phone
         self.creditCardNumber = creditCardNumber
@@ -37,6 +39,9 @@ class PS5Bot:
         email = '//*[@id="email"]'
         streetAddress = '//*[@id="addressLineOne"]'
         city = '//*[@id="city"]'
+        stateDropdown = Select('//*[@id="state"]')
+        # Change state name to your own 
+        state = stateDropdown.select_by_visible_text('New York')
         zipCode = '//*[@id="postalCode"]'
         phone = '//*[@id="phone"]'
         confirmInfo = ('/html/body/div[1]/div/div[1]/div/div[1]/div[3]/div/div/div/div[3]/div[1]/div[2]/'
@@ -47,6 +52,7 @@ class PS5Bot:
         self.enterData(email, self.email)
         self.enterData(streetAddress, self.streetAddress)
         self.enterData(city, self.city)
+        self.enterData(state, self.state)
         self.enterData(zipCode, self.zipCode)
         self.enterData(phone, self.phone)
         self.clickButton(confirmInfo)
@@ -86,6 +92,7 @@ if __name__ == "__main__":
         email = "",
         streetAddress = "",
         city = "",
+        state = "",
         zipCode = "",
         phone = "",
         creditCardNumber = "",
